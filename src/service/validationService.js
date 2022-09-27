@@ -8,17 +8,25 @@ class ValidationService {
     if( typeof parameter == 'string') return true
   }
 
-  static ifNumber(string){
-    if(string.length > 0) {
-      const list = '0123456789'
-      return string.split('').every(elem => list.includes(elem))
-    } else {
-      return false
-    }
+  static ifNumber(parameter){
+    if( typeof parameter == "number") return true
   }
 
   static ifStringNotEmpty(parameter) {
     if(this.ifString(parameter) && this.notEmpty(parameter)) return true
+  }
+
+  static validNewStudent (name, classGroup, age) {
+    const nameValid = this.ifStringNotEmpty(name)
+    const classGroupValid = this.ifStringNotEmpty(classGroup)
+    const ageValid = this.ifNumber(age)
+
+    if (nameValid && classGroupValid && ageValid) { 
+      return true 
+    } else {
+      return false
+    }
+
   }
 }
 
