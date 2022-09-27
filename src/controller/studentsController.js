@@ -6,7 +6,7 @@ DbMethods.createTable()
 
 class StudentsController {
   static rotas(app){
-    app.get("/", async (req, res) => {
+    app.get("/studants", async (req, res) => {
       try {
         const response = await DbMethods.getStudents()
         res.status(200).json(response)
@@ -15,11 +15,10 @@ class StudentsController {
       }  
     });
 
-    app.post("/", async (req, res) => {
+    app.post("/studants", async (req, res) => {
       try {
         const body = req.body
         const itemValid = ValidationService.validNewStudent(body.name_student, body.class_student, body.age_student)
-        console.log(body)
         if (itemValid) {
           const item = new StudentModel(...Object.values(req.body))
           const response = await DbMethods.postStudent(item)
@@ -32,9 +31,15 @@ class StudentsController {
       }      
     })
 
-    app.put("/estudantes/:parametro", () => {});
-
-    app.delete("/estudantes/:parametro", () => {});
+    app.delete("/studants/:id", async (req, res) => {
+      try {                
+        const item = await DbMethods.deletStudent(req.params.id)
+        res.status(200).json(item)
+      } catch (error) {    
+        res.status(404).json({Error: error.message})
+      }
+    })
+    ;
   }
 
 };

@@ -53,6 +53,19 @@ class DbMethods {
     
   }
 
+  static deletStudent(id) {
+    const query = `DELETE FROM students WHERE id_student = ?`
+    return new Promise((resolve, reject) => {
+      Database.run(query, id, (e)=>{
+          if(e){
+              reject(e.message)
+          } else {
+              resolve({message: `Record with Id ${id} successfully deleted.`})
+          }
+      })
+    })
+  }
+
 }
 
 export default DbMethods;
