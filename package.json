@@ -1,0 +1,16 @@
+{
+  "name": "backend_challenge_week_1",
+  "version": "1.0.0",
+  "description": "api_challenge_week_1",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Nodja_Lima",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "type": "module"
+}
