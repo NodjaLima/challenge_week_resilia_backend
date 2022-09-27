@@ -5,11 +5,11 @@ test('checks if the data is a string', () => {
 })
 
 test('checks if the data is a string', () => {
-  expect(ValidationService.ifString(1245)).toBe(false);
+  expect(ValidationService.ifString(1245)).toBe(undefined);
 })
 
 test('checks if the data is a string', () => {
-  expect(ValidationService.ifString(true)).toBe(false);
+  expect(ValidationService.ifString(true)).toBe(undefined);
 })
 
 test('checks if the data is a string', () => {
@@ -25,15 +25,15 @@ test('checks if the data is a number', () => {
 })
 
 test('checks if the data is a number', () => {
-  expect(ValidationService.ifNumber("1245")).toBe(false);
+  expect(ValidationService.ifNumber("1245")).toBe(undefined);
 })
 
 test('checks if the data is a number', () => {
-  expect(ValidationService.ifNumber(true)).toBe(false);
+  expect(ValidationService.ifNumber(true)).toBe(undefined);
 })
 
 test('checks if the data is a non-empty string', () => {
-  expect(ValidationService.ifStringNotEmpty('')).toBe(false);
+  expect(ValidationService.ifStringNotEmpty('')).toBe(undefined);
 })
 
 test('checks if the data is a non-empty string', () => {
