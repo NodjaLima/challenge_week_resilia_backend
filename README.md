@@ -2,6 +2,10 @@
 
 API criada para alimentar aplicação ReactJs, de acordo com o Challenge Week proposto pela Resília Educação.
 
+## Link da API (hospedada na Heroku):
+
+https://api-challenge-week-resilia.herokuapp.com/
+
 ## Tenologias ⚙: 
 
  -   VScode
