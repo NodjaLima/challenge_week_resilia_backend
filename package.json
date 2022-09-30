@@ -2,9 +2,10 @@
   "name": "backend_challenge_week_1",
   "version": "1.0.0",
   "description": "api_challenge_week_1",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "start": "node ./index.js"
   },
   "keywords": [],
   "author": "Nodja_Lima",
